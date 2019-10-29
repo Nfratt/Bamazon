@@ -9,6 +9,7 @@ CREATE TABLE products(
   price BIGINT,
   stock_quantity SMALLINT
 );
+SELECT * FROM PRODUCTS;
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
 values ('Keyboard', 'Tech', 100, 50 );
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
