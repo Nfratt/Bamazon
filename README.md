@@ -8,7 +8,7 @@ creating a mock user interface with javascript and Node.
 screenshots(https://docs.google.com/document/d/1VgSaAe0V8NGYHc0QNjbHwvgjDkOixVNgqnzi1akPkhU/edit?usp=sharing)
 
 Following the creation of the database
-![Test Image 1](../assets/db code.png)
+![Test Image 1](assets/db code.png)
 
 after creating your own config.js file with the following
 
