@@ -61,5 +61,44 @@ function init(){
                   console.log("Success! Your total is $" + Total.toFixed(2) +
                    ". it will be shipped soon ");
               });
+              connection.query("SELECT * FROM Departments", function(err, deptRes){
+                if(err) throw err;
+                var index;
+                for(var i = 0; i < deptRes.length; i++){
+                  if(deptRes[i].DepartmentName === res[whatToBuy].DepartmentName){
+                    index = i;
+                  }
+                }
+                 //updates totalSales in departments table
+          connection.query("UPDATE Departments SET ? WHERE ?", [
+            {TotalSales: deptRes[index].TotalSales + grandTotal},
+            {DepartmentName: res[whatToBuy].DepartmentName}
+            ], function(err, deptRes){
+                if(err) throw err;
+                //console.log("Updated Dept Sales.");
             });
+          });
+  
+        } else{
+          console.log("Sorry, not enough stock");
+        }
+  
+        reprompt();
+      })
+  })
+  }
+  //ask if they are done
+function reprompt(){
+  inquirer.prompt([{
+    type: "confirm",
+    name: "reply",
+    message: "Would you like to keep shopping?"
+  }]).then(function(ans){
+    if(ans.reply){
+      start();
+    } else{
+      console.log("See you soon!");
+    }
+  });
+}
           init();
