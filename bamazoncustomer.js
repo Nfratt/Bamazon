@@ -92,7 +92,7 @@ function askagain() {
     if (ans.reply) {
       init();
     } else {
-      console.log("See you soon!");
+      console.log("Bye,Bye");
     }
   });
 }
