@@ -55,7 +55,7 @@ function makepurchse() {
     var whatToBuy = items.find(function(it){return it.item_id==ans.id});
     var howMuch = parseInt(ans.amount);
     console.log(items);
-    var Total = parseFloat(whatToBuy.price * howMuch).toFixed(2);
+    var Total = parseFloat(whatToBuy.price * howMuch).toFixed(2);s
     
 
     //check if amount is available 
